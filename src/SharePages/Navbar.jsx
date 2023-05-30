@@ -6,7 +6,7 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
     </>
     return (
-<div className="navbar text-white fixed z-10 w-10/12 bg-opacity-20 bg-black">
+<div className="navbar text-white fixed z-10 xl:w-3/4 w-10/12 bg-opacity-20 bg-black">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -16,7 +16,7 @@ const Navbar = () => {
         {nabIteam}
       </ul>
     </div>
-    <a className="normal-case text-2xl">Bistro Boss 
+    <a className="normal-case  md:text-2xl xl:text-4xl">Bistro Boss 
       <br /> <p className='-mt-2'>Restaurant</p>
     </a>
   </div>
