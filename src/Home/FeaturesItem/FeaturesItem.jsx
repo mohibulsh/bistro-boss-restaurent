@@ -12,7 +12,7 @@ const FeaturesItem = () => {
                 ></SectionTitle>
             </div>
             <div className='md:flex gap-8 justify-center items-center py-16 xl:px-24 pb-32'>
-                <img className='rounded' style={{ width: '640px' }} src={featureImg} alt="" />
+                <img className='rounded md:w-1/2 p-4 '  src={featureImg} alt="" />
                 <div className='lg:ps-8 text-white'>
                      <p>March 20, 2023</p>
                      <h1 className='uppercase'>where can i ge some</h1>

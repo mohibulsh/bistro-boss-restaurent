@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const nabIteam = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/menu'>Our Menu</Link></li>
     </>
     return (
 <div className="navbar text-white fixed z-10 xl:w-3/4 w-10/12 bg-opacity-20 bg-black">

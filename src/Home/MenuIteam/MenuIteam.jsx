@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import SectionTitle from '../../Components/SectionTitle/SectionTitle';
 import IteamCart from '../../SharePages/IteamCart';
+import useMenu from '../../Hooks/useMenu';
 
 const MenuIteam = () => {
-    const [menu,setMenu]=useState([])
-    useEffect(()=>{
-        fetch('menu.json')
-        .then(res =>res.json())
-        .then(data=>{
-            const popularItm =data.filter(item=>item.category==="popular")
-            setMenu(popularItm)
-        })
-    },[])
+    const {menu}=useMenu([])
+    // const [menu,setMenu]=useState([])
+    // useEffect(()=>{
+    //     fetch('menu.json')
+    //     .then(res =>res.json())
+    //     .then(data=>{
+    //         const popularItm =data.filter(item=>item.category==="popular")
+    //         setMenu(popularItm)
+    //     })
+    // },[])
     console.log(menu)
     return (
         <>
