@@ -10,7 +10,7 @@ const MenuCover = ({ img, title }) => {
             bgImageAlt={title}
             strength={-200}
         >
-            <div className="hero" style={{ backgroundImage: `url("${img}")`, height: '400px' }}>
+            <div className="hero" style={{ backgroundImage: `url("${img}")`, height: '600px' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">

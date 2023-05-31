@@ -4,7 +4,8 @@ import IteamCart from '../../SharePages/IteamCart';
 import useMenu from '../../Hooks/useMenu';
 
 const MenuIteam = () => {
-    const {menu}=useMenu([])
+    const [menu]=useMenu([])
+    const popular =menu.filter(item=>item.category==="popular")
     // const [menu,setMenu]=useState([])
     // useEffect(()=>{
     //     fetch('menu.json')
@@ -14,7 +15,7 @@ const MenuIteam = () => {
     //         setMenu(popularItm)
     //     })
     // },[])
-    console.log(menu)
+    console.log(popular)
     return (
         <>
             <SectionTitle
@@ -23,7 +24,7 @@ const MenuIteam = () => {
             />
             <div className='grid md:grid-cols-2 gap-4 xl:gap-8 mb-12'>
                 {
-                    menu.map(iteam=><IteamCart
+                    popular.map(iteam=><IteamCart
                     key={iteam._id}
                     iteam={iteam}
                     />)
