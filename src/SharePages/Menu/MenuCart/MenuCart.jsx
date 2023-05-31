@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuCover from '../MenuCover/MenuCover';
 import IteamCart from '../../IteamCart';
+import { Link } from 'react-router-dom';
 
 const MenuCart = ({ iteams, img, title }) => {
     return (
@@ -15,9 +16,11 @@ const MenuCart = ({ iteams, img, title }) => {
                 }
             </div>
             <div className='text-center'>
+                <Link to={`/shop/${title}`}>
                 <button className="btn btn-outline btn-primary uppercase border-0 border-b-4  mb-12">ORDER YOUR FAVOURITE FOOD</button>
-            </div>
+            </Link>
         </div>
+        </div >
     );
 };
 

@@ -5,6 +5,7 @@ import {
 import Main from '../Layout/Main';
 import Home from '../Home/Home';
 import Menu from '../SharePages/Menu/Menu';
+import Shop from '../ShopPages/Shop';
 
 export  const router = createBrowserRouter([
         {
@@ -18,6 +19,10 @@ export  const router = createBrowserRouter([
             {
               path:'/menu',
               element:<Menu/>
+            },
+            {
+              path:'/shop/:category',
+              element:<Shop></Shop>
             }
           ]
         },
