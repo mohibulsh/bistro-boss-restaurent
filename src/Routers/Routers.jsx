@@ -6,6 +6,7 @@ import Main from '../Layout/Main';
 import Home from '../Home/Home';
 import Menu from '../SharePages/Menu/Menu';
 import Shop from '../ShopPages/Shop';
+import Login from '../LoginPage/Login';
 
 export  const router = createBrowserRouter([
         {
@@ -23,6 +24,10 @@ export  const router = createBrowserRouter([
             {
               path:'/shop/:category',
               element:<Shop></Shop>
+            },
+            {
+              path:'/login',
+              element:<Login/>
             }
           ]
         },
