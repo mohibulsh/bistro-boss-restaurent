@@ -2,10 +2,13 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha }
     from 'react-simple-captcha';
 import { authContext } from '../Providers/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFacebook, BsGoogle, BsGithub } from "react-icons/bs";
 import { Helmet } from 'react-helmet-async';
-const Login = () => {
+const Login = () => { 
+    const navigate =useNavigate()
+    const locatin =useLocation()
+    const from=locatin.state?.from?.pathname || "/"
     const captchaRef = useRef(null);
     const [disable, setDisable] = useState(true)
     const { loginUser } = useContext(authContext)
@@ -27,6 +30,7 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 const logUser = result.user;
+                navigate(from, { replace: true });
                 console.log(logUser)
             })
             .catch(error => {

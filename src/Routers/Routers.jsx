@@ -8,6 +8,8 @@ import Menu from '../SharePages/Menu/Menu';
 import Shop from '../ShopPages/Shop';
 import Login from '../LoginPage/Login';
 import SignUp from '../SignUpPage/SignUp';
+import Secret from '../SharePages/Secret';
+import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 
 export  const router = createBrowserRouter([
         {
@@ -33,6 +35,10 @@ export  const router = createBrowserRouter([
             {
               path:'/signup',
               element:<SignUp/>
+            },
+            {
+              path:'/secret',
+              element:<PrivateRoute><Secret/></PrivateRoute>
             }
           ]
         },

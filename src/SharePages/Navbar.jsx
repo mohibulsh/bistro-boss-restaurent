@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
+import { authContext } from '../Providers/AuthProvider';
 const Navbar = () => {
+  const {user,logOut}=useContext(authContext)
+   const handlerLogOut =()=>{
+      logOut()
+      .then()
+      .catch(error=>{
+        console.log(error)
+      })
+   }
     const nabIteam = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/shop/salad'>Our Shop</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        <li><Link to='/secret'>Secret</Link></li>
+        {
+          user && user?<li><button onClick={handlerLogOut}>log Out</button></li>
+          :<li><Link to='/login'>Login</Link></li>
+        }
     </>
     return (
 <div className="navbar text-white fixed z-10 xl:w-3/4 w-10/12 bg-opacity-20 bg-black">

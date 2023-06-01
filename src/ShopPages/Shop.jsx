@@ -8,7 +8,6 @@ import ShopIteam from './ShopIteam';
 import { useParams } from 'react-router-dom';
 const Shop = () => {
     const {category} =useParams();
-    console.log(category)
     const categories = ['salad','pizza','soup','dessert','dringing']
     const initialIndex = categories.indexOf(category);
     const [tabIndex,setIndex]=useState(initialIndex)

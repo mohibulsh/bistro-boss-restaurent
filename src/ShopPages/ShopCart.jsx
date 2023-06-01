@@ -2,7 +2,6 @@ import React from 'react';
 
 const ShopCart = ({iteam}) => {
     const {name,recipe,image,price}=iteam;
-    console.log(iteam)
     return (
         <div className="card w-96 bg-base-100 shadow-xl relative ">
             <figure><img src={image} alt={name} /></figure>
