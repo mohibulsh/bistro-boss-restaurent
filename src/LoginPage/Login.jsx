@@ -69,8 +69,9 @@ const Login = () => {
                                 <input ref={captchaRef} type="text" required name='captcha' placeholder="text the captcha" className="input input-bordered" />
                                 <button onClick={handlerCaptcha} className="btn mt-2 btn-xs w-full">Captcha match</button>
                             </div>
+                            {/*TODO btn disable*/}
                             <div className="form-control mt-6">
-                                <input disabled={disable} className="btn btn-primary" type="submit" value="Login" />
+                                <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
                         <p className='text-center pb-4'><small>new here? </small><Link className='text-orange-400' to='/signup'>Create a new account</Link></p>
