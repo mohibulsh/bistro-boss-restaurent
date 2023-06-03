@@ -30,7 +30,7 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 const logUser = result.user;
-                navigate(from, { replace: true });
+                navigate(from,{ replace: true});
                 console.log(logUser)
             })
             .catch(error => {
@@ -66,7 +66,7 @@ const Login = () => {
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
-                                <input ref={captchaRef} type="text" required name='captcha' placeholder="text the captcha" className="input input-bordered" />
+                                <input ref={captchaRef} type="text"  name='captcha' placeholder="text the captcha" className="input input-bordered" />
                                 <button onClick={handlerCaptcha} className="btn mt-2 btn-xs w-full">Captcha match</button>
                             </div>
                             {/*TODO btn disable*/}
