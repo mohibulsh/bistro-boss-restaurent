@@ -10,6 +10,8 @@ import Login from '../LoginPage/Login';
 import SignUp from '../SignUpPage/SignUp';
 import Secret from '../SharePages/Secret';
 import PrivateRoute from '../PrivateRoutes/PrivateRoute';
+import Dashboard from '../Layout/Dashboard';
+import MyCart from '../Dashboard/MyCart';
 
 export  const router = createBrowserRouter([
         {
@@ -42,6 +44,16 @@ export  const router = createBrowserRouter([
             }
           ]
         },
+        {
+          path:'dashboard',
+          element:<Dashboard></Dashboard>,
+          children:[
+            {
+              path:'mycarts',
+              element:<MyCart/>
+            }
+          ]
+        }
       ]);
 
 

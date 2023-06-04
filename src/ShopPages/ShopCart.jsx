@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { authContext } from '../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import useCarts from '../Hooks/useCarts';
 
 const ShopCart = ({ iteam }) => {
     const { user } = useContext(authContext)
+    const [, ,refetch]=useCarts()
     const { name, recipe, image, price,_id } = iteam;
     const Navigate =useNavigate()
     const handlerAddToShopping = (shoppingItem) => {
@@ -22,14 +24,17 @@ const ShopCart = ({ iteam }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        refetch() 
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: 'Your work has been saved',
+                            title: 'Your products is saved to Cart',
                             showConfirmButton: false,
                             timer: 1500
                         })
-                    } 
+                        
+                    }
+                    
                 })
         }  else {
             Swal.fire({
