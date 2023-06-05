@@ -8,3 +8,6 @@
 .drawer  a.active {
     color:white;
   }
+  .max_width{
+    max-width: 1280px !important
+  }

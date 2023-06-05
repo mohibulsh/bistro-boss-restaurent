@@ -5,7 +5,7 @@ import useCarts from '../Hooks/useCarts';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 const MyCart = () => {
-    const [, cart,refetch] = useCarts()
+    const [,cart,refetch] = useCarts()
     const total = cart?.reduce((sum, iteam) => iteam.price + sum, 0)
     const handleDelete =(id)=>{
         console.log(id)
@@ -24,10 +24,11 @@ const MyCart = () => {
               })
               .then(res=>res.json())
               .then(data=>{
-                if(data.deleteCount > 0){
+                console.log(data)
+                if(data.deletedCount > 0){
                     refetch()
                     Swal.fire({
-                        title: `you ${cart.name} is delete`,
+                        title: `you products is delete`,
                         showClass: {
                           popup: 'animate__animated animate__fadeInDown'
                         },
@@ -41,7 +42,7 @@ const MyCart = () => {
           })
     }
     return (
-        <div>
+        <div className='min-h-screen xl:max-w-full max_width'>
             <Helmet>
                 <title>Bistro Boss||My cart</title>
                 <link rel="canonical" href="https://www.tacobell.com/" />
@@ -49,14 +50,14 @@ const MyCart = () => {
             <SectionTitle subHeading={'my cart'}
                 heading={'wanna add more ?'}></SectionTitle>
 
-            <div className='uppercase font-bold flex h-14 justify-between'>
+            <div className='uppercase font-bold flex h-14 justify-between max_width'>
                 <div className="text-xl"> iteam {cart?.length}</div>
-                <div className="text-xl"> Price ${total.toFixed(2)} </div>
+                <div className="text-xl"> Price ${total?.toFixed(2)} </div>
                 <button className="btn btn-warning btn-sm">Pay</button>
             </div>
                 {/* // show the cart price */}
             <div className="overflow-y-auto">
-                <table className="table">
+                <table className="table max_width">
                     {/* head */}
                     <thead>
                         <tr>

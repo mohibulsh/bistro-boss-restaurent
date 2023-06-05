@@ -5,9 +5,7 @@ import {FaShoppingCart } from 'react-icons/fa';
 import useCarts from '../Hooks/useCarts';
 const Navbar = () => {
   
-  const [,data] = useCarts()
-  console.log(data)
-
+  const [,cart] = useCarts()
   const { user, logOut } = useContext(authContext)
   const handlerLogOut = () => {
     logOut()
@@ -25,7 +23,7 @@ const Navbar = () => {
       <Link to='/dashboard/mycarts'>
         <button className="btn bg-black p-2 text-xl border-0 bg-opacity-25">
           <FaShoppingCart/>
-          <div className="badge badge-secondary ms-1">+{data?.length || 0}</div>
+          <div className="badge badge-secondary ms-1">+{cart?.length || 0}</div>
         </button>
       </Link>
     </li>

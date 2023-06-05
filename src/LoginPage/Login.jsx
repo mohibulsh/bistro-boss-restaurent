@@ -5,6 +5,7 @@ import { authContext } from '../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFacebook, BsGoogle, BsGithub } from "react-icons/bs";
 import { Helmet } from 'react-helmet-async';
+import SocialLogin from '../Components/SocialLogin';
 const Login = () => { 
     const navigate =useNavigate()
     const locatin =useLocation()
@@ -75,17 +76,7 @@ const Login = () => {
                             </div>
                         </form>
                         <p className='text-center pb-4'><small>new here? </small><Link className='text-orange-400' to='/signup'>Create a new account</Link></p>
-                        <div className='text-center'>
-                            <p>Or sign up With</p>
-                            <div className='flex justify-center items-center py-4 gap-4'>
-                                <div className='border-solid border-2 rounded-full border-sk-100 p-2 text-xl hover:border-gray-500 hover:text-green-300'>
-                                    < BsFacebook /></div>
-                                <div className='border-solid border-2 rounded-full border-sk-100 p-2 text-xl hover:border-gray-500 hover:text-green-300'>
-                                    <BsGoogle /></div>
-                                <div className='border-solid border-2 rounded-full border-sk-100 p-2 text-xl hover:border-gray-500 hover:text-green-300'>
-                                    <BsGithub /></div>
-                            </div>
-                        </div>
+                       <SocialLogin/>
                     </div>
                 </div>
             </div>

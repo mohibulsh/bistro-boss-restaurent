@@ -15,7 +15,6 @@ const MenuIteam = () => {
     //         setMenu(popularItm)
     //     })
     // },[])
-    console.log(popular)
     return (
         <>
             <SectionTitle

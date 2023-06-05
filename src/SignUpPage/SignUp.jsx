@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { BsFacebook, BsGoogle, BsGithub } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { Helmet } from 'react-helmet-async';
 import { authContext } from '../Providers/AuthProvider';
 import Swal from 'sweetalert2'
+import SocialLogin from '../Components/SocialLogin';
 const SignUp = () => {
     const { createUser, updateLoggedProfile } = useContext(authContext)
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -17,6 +17,16 @@ const SignUp = () => {
                 console.log(loggedUser)
                 updateLoggedProfile(data.name, data.photo)
                     .then(res => {
+                        const postLogUser={name:data.name,email:data.email}
+                        fetch('http://localhost:5000/users',{
+                            method:'POST',
+                            headers:{
+                                'content-type':'application/json'
+                            },
+                            body:JSON.stringify(postLogUser)
+                        })
+                        .then(res=>res.json())
+                        .then(data=>console.log(data))
                         console.log('user profile update')
                         Swal.fire({
                             title: 'your login successfully',
@@ -89,17 +99,7 @@ const SignUp = () => {
                             </div>
                         </form>
                         <p className='text-center pb-2'><small>Already registared? </small><Link className='text-orange-400' to='/login'>Go to log in</Link></p>
-                        <div className='text-center'>
-                            <p>Or sign up With</p>
-                            <div className='flex justify-center items-center py-4 gap-4'>
-                                <div className='border-solid border-2 rounded-full border-sk-100 p-2 text-xl hover:border-gray-500 hover:text-green-300'>
-                                    < BsFacebook /></div>
-                                <div className='border-solid border-2 rounded-full border-sk-100 p-2 text-xl hover:border-gray-500 hover:text-green-300'>
-                                    <BsGoogle /></div>
-                                <div className='border-solid border-2 rounded-full border-sk-100 p-2 text-xl hover:border-gray-500 hover:text-green-300'>
-                                    <BsGithub /></div>
-                            </div>
-                        </div>
+                        <SocialLogin/>  
                     </div>
                 </div>
             </div>
