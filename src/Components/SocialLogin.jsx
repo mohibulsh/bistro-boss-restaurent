@@ -11,7 +11,6 @@ const SocialLogin = () => {
         googleSignIn()
         .then(result=>{
             const googleUser =result.user;
-            console.log(googleUser)
             const googleUserPost ={email:googleUser.email, name:googleUser.displayName}
             console.log(googleUser.providerId)
             if(googleUser.providerId){
