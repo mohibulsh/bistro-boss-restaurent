@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaBookOpen, FaCalendarAlt, FaHome, FaRev, FaShoppingCart } from 'react-icons/fa';
 import { MdOutlineContactMail, MdPayments } from "react-icons/md";
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { AiOutlineMenu} from "react-icons/ai";
 
 const Dashboard = () => {
@@ -14,22 +14,22 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
             </div>
-            <div className="drawer-side">
+            <div className=" drawer drawer-side ">
                 <label htmlFor="my-drawer-2"
                     className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full bg-base-200">
+                <ul className="menu p-4 w-80 h-full  bg-[#D1A054]">
                     {/* Sidebar content here */}
-                    <li><Link to='/dashboard/usehome'> <FaHome /> USER HOME</Link></li>
-                    <li><Link to='/dashboard/reservation'> <FaCalendarAlt /> RESERVATION</Link></li>
-                    <li><Link to='/dashboard/payment'><MdPayments /> PAYMENT HISTORY</Link></li>
-                    <li><Link to='/dashboard/mycarts'><FaShoppingCart /> MY CART</Link></li>
-                    <li><Link to='/dashboard/review'><FaRev /> REVIEW</Link></li>
-                    <li><Link to='/dashboard/booking'><FaBookOpen /> MY BOOKING</Link></li>
+                    <li><NavLink to='/dashboard/usehome'> <FaHome /> USER HOME</NavLink></li>
+                    <li><NavLink to='/dashboard/reservation'> <FaCalendarAlt /> RESERVATION</NavLink></li>
+                    <li><NavLink to='/dashboard/payment'><MdPayments /> PAYMENT HISTORY</NavLink></li>
+                    <li><NavLink to='/dashboard/mycarts'><FaShoppingCart /> MY CART</NavLink></li>
+                    <li><NavLink to='/dashboard/review'><FaRev /> REVIEW</NavLink></li>
+                    <li><NavLink to='/dashboard/booking'><FaBookOpen /> MY BOOKING</NavLink></li>
                     <div className="divider"></div>
-                    <li><Link to='/'><FaHome />HOME</Link></li>
-                    <li><Link to='/menu'><AiOutlineMenu/> MENU</Link></li>
-                    <li><Link to='/shop'><FaShoppingCart /> SHOP</Link></li>
-                    <li><Link to='/dashboard/booking'><MdOutlineContactMail/> CONTACT</Link></li>
+                    <li><NavLink to='/'><FaHome />HOME</NavLink></li>
+                    <li><NavLink to='/menu'><AiOutlineMenu/> MENU</NavLink></li>
+                    <li><NavLink to='/shop'><FaShoppingCart /> SHOP</NavLink></li>
+                    <li><NavLink to='/dashboard/booking'><MdOutlineContactMail/> CONTACT</NavLink></li>
                 </ul>
 
             </div>
@@ -39,9 +39,3 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-{/* <li><Link to='/dashboard/usehome'>USER HOME</Link></li>
-<li><Link to='/dashboard/reservation'>RESERVATION</Link></li>
-<li><Link to='/dashboard/payment'>PAYMENT HISTORY</Link></li>
-<li><Link to='/dashboard/mycarts'>MY CART</Link></li>
-<li><Link to='/dashboard/review'>ADD REVIEW</Link></li>
-<li><Link to='/dashboard/booking'>MY BOOKING</Link></li> */}
