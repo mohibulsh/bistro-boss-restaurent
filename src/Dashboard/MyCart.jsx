@@ -8,7 +8,6 @@ const MyCart = () => {
     const [,cart,refetch] = useCarts()
     const total = cart?.reduce((sum, iteam) => iteam.price + sum, 0)
     const handleDelete =(id)=>{
-        console.log(id)
         Swal.fire({
             title: 'Are you sure?',
             text: `Are you sure delete the ${cart.name}`,
